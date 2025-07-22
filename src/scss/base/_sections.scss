@@ -1,0 +1,7 @@
+// Base vertical padding
+$section-padding-min: 40px;
+$section-padding-max: 120px;
+
+@mixin section($padding-y: clamp($section-padding-min, 8vw, $section-padding-max)) {
+  padding-block: $padding-y;
+}

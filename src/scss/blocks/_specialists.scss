@@ -1,0 +1,23 @@
+.specialists {
+    &__container {
+        @include container;
+    }
+
+    &__items {
+        display: flex;
+        gap: 24px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        @include tablet {
+            gap: 16px;
+        }
+    }
+}
+
+.specialist-card {
+    background-color: transparent;
+    flex: 1;
+    min-height: 100%;
+    height: auto;
+}

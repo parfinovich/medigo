@@ -1,0 +1,51 @@
+// Text color
+.text-blue {
+  color: $color-accent-blue !important;
+}
+
+.text-dark {
+  color: $color-dark !important;
+}
+
+.text-gray {
+  color: $color-gray !important;
+}
+
+// BG Color
+.bg-light {
+  background-color: $color-section-bg !important;
+}
+
+.bg-blue {
+  background-color: $color-accent-blue !important;
+  color: $color-white;
+}
+
+// Margin
+.mb-16 { margin-bottom: 16px !important; }
+.mb-32 { margin-bottom: 32px !important; }
+.mt-32 { margin-top: 32px !important; }
+.pb-64 { padding-bottom: 64px !important; }
+
+// Centered
+.text-center {
+  text-align: center !important;
+}
+
+.link-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: $font-size-base;
+  color: $color-accent-blue;
+  span, svg {
+    transform: translateX(0);
+    vertical-align: middle;
+    transition: transform .4s ease;
+  }
+  &:hover {
+    svg {
+      transform: translateX(10px);
+    }
+  }
+}

@@ -1,0 +1,126 @@
+.footer {
+	background: $color-accent-blue;
+	padding: 48px 0 0;
+
+	&__container {
+		@include container;
+		display: flex;
+		gap: 48px;
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	&__col {
+		flex: 1 1 0;
+		min-width: 220px;
+		max-width: 340px;
+
+		&--brand { max-width: 340px; }
+		&--links { max-width: 220px; }
+		&--address { max-width: 340px; }
+	}
+
+	&__title {
+		font-size: $font-size-lg;
+		color: $color-white;
+	}
+	&__subtitle {
+		color: $color-white;
+		font-weight: $font-weight-semibold;
+	}
+
+	&__desc {
+		p {
+			color: $color-white;
+		}
+	}
+
+	&__social-list {
+		display: flex;
+		gap: 12px;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	&__social-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background: rgba(255,255,255,0.1);
+		color: $color-white;
+		transition: background 0.2s;
+
+		&:hover,
+		&:focus {
+			background: $color-white;
+			svg {
+				color: $color-accent-blue;
+			}
+		}
+
+		svg { 
+			width: 18px; 
+			height: 18px; 
+			color: $color-white;
+		}
+	}
+
+	&__links {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	&__link {
+		color: $color-white;
+		text-decoration: none;
+		font-size: 1rem;
+		transition: color 0.2s;
+		&:hover,
+		&:focus {
+			color: $color-round;
+		}
+	}
+
+	&__map {
+		border-radius: 14px;
+		overflow: hidden;
+		margin-top: 8px;
+		img { display: block; width: 100%; height: auto; }
+	}
+
+	&__bottom {
+		margin-top: 32px;
+		text-align: center;
+		padding-bottom: 32px;
+	}
+
+	&__divider {
+		border: none;
+		border-top: 1px solid $color-white;
+		margin-bottom: 12px;
+		width: 100%;
+		opacity: 0.5;
+	}
+
+	&__copyright {
+		font-size: 1rem;
+		color: #fff;
+		opacity: 0.8;
+	}
+
+	// Адаптив
+	@media (max-width: 900px) {
+		&__container { flex-direction: column; gap: 24px; align-items: stretch; }
+		&__col { max-width: 100%; min-width: 0; }
+		&__map { margin-bottom: 24px; }
+	}
+}

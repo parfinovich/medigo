@@ -1,0 +1,56 @@
+// Color Scheme
+.section {
+  @include section;
+
+  &--light {
+    background-color: $color-section-bg;
+  }
+
+  &--dark {
+    background-color: $color-active-card;
+    color: $color-white;
+
+    .section__title,
+    .section__subtitle {
+      color: $color-white;
+    }
+  }
+
+  &--alt {
+    background-color: #f0f4ff;
+  }
+}
+
+// Section Title
+.section__title {
+  font-size: $font-size-xxl; // 32px
+  font-weight: $font-weight-bold;
+  color: $color-dark;
+  text-align: left;
+  margin-bottom: 50px;
+
+  @include tablet {
+    font-size: 28px;
+  }
+
+  @include mobile {
+    font-size: 24px;
+  }
+}
+
+.section__subtitle {
+  font-size: $font-size-base; // 16px
+  color: $color-gray;
+  text-align: left;
+  max-width: 640px;
+  margin-inline: auto;
+  margin-bottom: 32px;
+
+  @include tablet {
+    font-size: 15px;
+  }
+
+  @include mobile {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,140 @@
+.header {
+    padding: 20px 0;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        @include container;
+    }
+
+    &__logo {
+        font-size: 24px;
+        font-weight: $font-weight-bold;
+        color: $color-accent-blue;
+        text-decoration: none;
+    }
+
+    &__nav {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+
+        @include tablet {
+            position: absolute;
+            top: 150%;
+            left: 0;
+            width: 100%;
+            background-color: $color-white;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            padding: 32px 16px;
+            transform: translateX(-200%);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 10;
+
+            &.nav--active {
+                transform: translateX(0);
+                opacity: 1;
+                pointer-events: auto;
+                height: 100vh;
+                z-index: 999;
+                justify-content: flex-start;
+                padding-block: 100px;
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        gap: 12px;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__btn {
+        font-size: $font-size-sm;
+    }
+}
+
+.nav {
+    &__list {
+        display: flex;
+        gap: 32px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        @include tablet {
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+
+    &__link {
+        font-size: $font-size-base;
+        font-weight: $font-weight-medium;
+        color: $color-dark;
+        text-decoration: none;
+
+        &:hover,
+        &--active {
+            color: $color-accent-blue;
+        }
+
+        @include tablet {
+            font-size: $font-size-lg;
+        }
+    }
+}
+
+// Burger Mobile
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 11;
+
+    @include tablet {
+        display: flex;
+    }
+
+    &__line {
+        height: 2px;
+        background-color: $color-accent-blue;
+        width: 100%;
+        border-radius: 1px;
+    }
+}
+
+
+.burger--active {
+    .burger__line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger__line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger__line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .burger__line {
+        transition: all 0.3s ease;
+    }
+}
